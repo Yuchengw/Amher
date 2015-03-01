@@ -7,7 +7,9 @@
 
 ##Check that user is set
 
-WARNING="****************WARNING***********"
+WARNING="****************WARNING*************"
+
+
 
 if [ -z "${USER:-}" ]; then
 	export USER=$(whoami)
@@ -24,7 +26,7 @@ function set_amher_ENV () {
 	export JAVA_HOME="$WEB_JDK_HOME/Linux/$2"
 	export PATH="$1:$JAVA_HOME/bin"
 
-	if [ -f $(uname -s) = Darwin ]; then
+	if [ "$OSTYPE" == Darwin ]; then
 		export JAVA_HOME="$WEB_JDK_HOME/Mac/$2"
 	fi
 }
