@@ -1,0 +1,22 @@
+gnoring Eclipse Setting folder
+######################
+/.settings/
+
+######################
+#Ignoring Eclipse Setting files
+######################
+/.classpath
+/.project
+
+######################
+#Ignoring following Self-dependent fixed files
+######################
+*.class
+*.log
+*.backup
+*.war
+*.ear
+#####################
+#Temporary ignored files
+#####################
+/Mobile/Extra-Tools

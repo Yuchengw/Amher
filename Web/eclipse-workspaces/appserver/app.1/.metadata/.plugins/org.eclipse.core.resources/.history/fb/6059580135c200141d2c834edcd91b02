@@ -1,0 +1,10 @@
+package com.amher.lib.cache;
+
+/**
+ * This is the interface for all cache objects
+ * 
+ * */
+
+public interface CacheableData {
+
+}

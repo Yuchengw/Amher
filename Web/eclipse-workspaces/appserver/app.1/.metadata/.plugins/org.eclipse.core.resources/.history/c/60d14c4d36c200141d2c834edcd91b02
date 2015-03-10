@@ -1,0 +1,8 @@
+package com.amher.lib.context;
+
+import java.util.concurrent.Callable;
+
+
+public interface ReleasableContextProvider {
+
+}

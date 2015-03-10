@@ -1,0 +1,14 @@
+package com.amher.lib.context;
+
+import java.util.concurrent.Callable;
+
+/**
+ * Marks a context provider as being established and releasable by "anyone",
+ * 
+ *@author AmherLib
+ *@since 1 
+ * */
+
+public interface ReleasableContextProvider {
+	
+}

@@ -1,0 +1,5 @@
+package com.amher.lib.cache;
+
+public interface CacheableData {
+
+}

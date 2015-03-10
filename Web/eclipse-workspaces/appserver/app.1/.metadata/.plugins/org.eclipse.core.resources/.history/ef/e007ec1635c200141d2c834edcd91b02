@@ -1,0 +1,13 @@
+package com.amher.lib.cache;
+
+/**
+ * This is the interface for all cache objects
+ * 
+ * @see CacheableKey
+ * @see CacheObjectBuilder
+ * 
+ * */
+
+public interface CacheableData extends Serializable{
+	
+}

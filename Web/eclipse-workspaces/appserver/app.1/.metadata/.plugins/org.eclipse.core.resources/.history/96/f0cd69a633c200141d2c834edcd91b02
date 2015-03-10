@@ -1,0 +1,14 @@
+package com.amher.lib.provider;
+
+
+/**
+ * UserInfo
+ * 
+ * @authro AmherLib
+ * @since 1
+ * */
+
+public interface UserInfo {
+	boolean isAdminUser();
+	String getName();
+}

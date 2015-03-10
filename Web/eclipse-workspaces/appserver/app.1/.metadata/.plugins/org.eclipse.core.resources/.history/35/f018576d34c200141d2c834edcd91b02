@@ -1,0 +1,5 @@
+package com.amher.lib.request;
+
+public class UserInfo implements CacheablyChallengedData UserInformation{
+
+}

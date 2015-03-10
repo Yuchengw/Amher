@@ -1,0 +1,5 @@
+package com.amher.lib.context;
+
+public interface Establishable {
+
+}

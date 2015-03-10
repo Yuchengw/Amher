@@ -1,0 +1,5 @@
+package com.appserver.core.entry;
+
+public class HelloServlet {
+
+}

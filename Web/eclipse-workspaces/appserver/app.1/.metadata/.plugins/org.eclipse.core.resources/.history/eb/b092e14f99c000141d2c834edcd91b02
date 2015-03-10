@@ -1,0 +1,13 @@
+package com.amher.lib.context;
+
+/***
+ * Represents an aspect of an object where it tracks where, when, and by whom it was established;
+ * allowing you to trace an object's creation or when something was checked out or established
+ * 
+ * @author AmherLib
+ * @since 1
+ * /
+
+public interface Traceable {
+
+}

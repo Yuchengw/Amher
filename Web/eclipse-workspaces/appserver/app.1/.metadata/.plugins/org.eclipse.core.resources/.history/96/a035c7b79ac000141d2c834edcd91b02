@@ -1,0 +1,9 @@
+package com.amher.lib.context;
+
+import java.util.Arrays;
+
+import com.google.common.collect.Lists;
+
+public interface ContextProvider {
+
+}

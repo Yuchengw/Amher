@@ -1,0 +1,20 @@
+package com.amher.lib.context;
+
+import java.util.concurrent.Callable;
+
+/**
+ * Marks a context provider as being established and releasable by "anyone",
+ * 
+ *@author AmherLib
+ *@since 1 
+ * */
+
+public interface ReleasableContextProvider<C extends Context> extends ContextProvider<C>, Establishable {
+	
+	/**
+	 * Establish the current context
+	 * @param context the context to establish
+	 * @throws IllegalStateException if the context is already established. Use the stackable variant and push
+	 * */
+	void establish(C context) throws IllegalStateException;
+}
