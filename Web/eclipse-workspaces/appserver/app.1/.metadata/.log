@@ -282,6 +282,7 @@ java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfigu
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-28 18:35:35.765
 !MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+<<<<<<< HEAD
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2015-03-01 20:31:23.305
 !MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
@@ -816,3 +817,5 @@ java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfigu
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2015-03-03 22:29:24.541
 !MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+=======
+>>>>>>> 23cf9d51cba05f914d5e89b73c1219c86f6862d8

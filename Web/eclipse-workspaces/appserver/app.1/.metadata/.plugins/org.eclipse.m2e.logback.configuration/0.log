@@ -475,6 +475,7 @@
 2015-02-28 18:35:35,764 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/yucheng-slave/Amher/Web/app/1/core/user/src/main/resources
 2015-02-28 18:35:35,765 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2015-02-28 18:35:35,765 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/yucheng-slave/Amher/Web/app/1/core/user/src/test/resources
+<<<<<<< HEAD
 2015-03-01 20:31:23,305 [Worker-71] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2015-03-01 20:31:23,306 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/yucheng-slave/Amher/Web/app/1/core/appserver/src/main/resources
 2015-03-01 20:31:23,307 [Worker-71] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
@@ -831,3 +832,5 @@
 2015-03-03 22:29:24,540 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/yucheng-slave/Amher/Web/app/1/core/appserver/src/main/resources
 2015-03-03 22:29:24,541 [Worker-182] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2015-03-03 22:29:24,541 [Worker-182] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /home/yucheng-slave/Amher/Web/app/1/core/appserver/src/test/resources
+=======
+>>>>>>> 23cf9d51cba05f914d5e89b73c1219c86f6862d8
