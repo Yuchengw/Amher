@@ -16,6 +16,7 @@ gnoring Eclipse Setting folder
 *.backup
 *.war
 *.ear
+*.swp
 #####################
 #Temporary ignored files
 #####################
