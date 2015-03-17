@@ -1,5 +1,0 @@
-package com.amher.lib.request;
-
-public interface userInformation {
-
-}

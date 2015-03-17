@@ -1,3 +1,0 @@
-INDEX VERSION 1.127
-/home/yucheng-slave/Amher/Web/eclipse-workspaces/appserver/app.1/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1336041716.index
-/platform/src/main/java
