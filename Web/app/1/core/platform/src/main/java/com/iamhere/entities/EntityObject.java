@@ -12,11 +12,11 @@ import com.iamhere.platform.func.DmlOperationWrapper;
 import com.iamhere.platform.func.DmlValidationHandler;
 
 /**
- * Represente a signle entity row for data manipulation. This object contains an
+ * Represent a single entity row for data manipulation. This object contains an
  * array of fields with the purpose of holding data values for that row. The
  * class is responsible for persisting and reading those value.
  * 
- * @author jassica
+ * @author platform
  *
  */
 public abstract class EntityObject {

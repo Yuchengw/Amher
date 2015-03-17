@@ -16,7 +16,7 @@ import com.iamhere.platform.adapters.DatabaseProvider;
  * Static utilities for performing insert and update operations on entity
  * objects
  * 
- * @author jassica
+ * @author platform
  *
  */
 public class BulkEntityOperations {

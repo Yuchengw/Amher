@@ -10,6 +10,7 @@ import com.iamhere.trashbin.Entity;
 
 // TODO: Add the bargain features
 public class OrderObject extends EntityObject {
+	
 	private UserObject jiaFang;
 	private UserObject yiFang;
 	private boolean isSuccess;

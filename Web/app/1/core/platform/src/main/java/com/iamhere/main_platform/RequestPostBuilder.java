@@ -6,20 +6,16 @@ public class RequestPostBuilder { //extends PostBuilder {
 
 	 private static volatile RequestPostBuilder INSTANCE = null;
 	 
-	    private RequestPostBuilder() {}
+	 private RequestPostBuilder() {}
 	 
-	    //thread safe and performance  promote 
-	    public static  RequestPostBuilder getInstance() {
-	        if(INSTANCE == null){
-	             synchronized(RequestPostBuilder.class){
-	                 //when more than two threads run into the first null check same time, to avoid instanced more than one time, it needs to be checked again.
-	                 if(INSTANCE == null){ 
-	                     INSTANCE = new RequestPostBuilder();
-	                  }
-	              } 
-	        }
-	        return INSTANCE;
-	    }
+	 // simple, thread safe and lazy load: initialization-on-demand holder idiom
+	 private static class RequestPostBuilderHolder {
+		 private static final RequestPostBuilder holder = new RequestPostBuilder();
+	 }
+	 
+	 public static  RequestPostBuilder getInstance() {
+		 return RequestPostBuilderHolder.holder;
+	 }
 	    
 //	@Override
 //	public void createNewAbstractPost(String subject, String location, int quantity) {

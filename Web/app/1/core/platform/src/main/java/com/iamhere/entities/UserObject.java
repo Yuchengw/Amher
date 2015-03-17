@@ -13,7 +13,7 @@ import com.iamhere.platform.func.DmlValidationHandler;
 
 /***
  * 
- * @author jassica
+ * @author platform
  *
  */
 public class UserObject  extends EntityObject {
@@ -22,7 +22,7 @@ public class UserObject  extends EntityObject {
 	private String lastName;
 	private String email;
 	private String phone;
-	private double creditInfo; // the number of likes fro all the posts
+	private double creditInfo; // the number of likes for all the posts
 	private double activeScore; // the sum of provide posts, request posts and
 								// post comments
 	private String password;

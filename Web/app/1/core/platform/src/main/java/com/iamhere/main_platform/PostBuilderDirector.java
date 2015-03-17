@@ -11,23 +11,20 @@ import com.iamhere.trashbin.ProvidePost;
 import com.iamhere.trashbin.RequestPost;
 
 public class PostBuilderDirector {
-	private static volatile PostBuilderDirector INSTANCE = null;
+	private static final PostBuilderDirector INSTANCE = new PostBuilderDirector();
 	 
     private PostBuilderDirector() {}
  
-    //thread safe and performance  promote 
-    public static  PostBuilderDirector getInstance() {
-        if(INSTANCE == null){
-             synchronized(PostBuilderDirector.class){
-                 //when more than two threads run into the first null check same time, to avoid instanced more than one time, it needs to be checked again.
-                 if(INSTANCE == null){ 
-                     INSTANCE = new PostBuilderDirector();
-                  }
-              } 
-        }
-        return INSTANCE;
+    // simple, thread safe and lazy load: initialization-on-demand holder idiom
+    private static class PostBuilderDirectorHolder {
+    	public static final PostBuilderDirector holder = new PostBuilderDirector();
     }
     
+    public static PostBuilderDirector getInstance() {
+        return PostBuilderDirectorHolder.holder;
+    }
+    
+    //TODO: remove this in th future
 //	public RequestPost constructRequestPost(String subject, String location, int quantity, Period period, double cost, UserObject creator) {
 //		RequestPostBuilder postBuilder = RequestPostBuilder.getInstance();
 //		postBuilder.createNewAbstractPost(subject, location, quantity);
