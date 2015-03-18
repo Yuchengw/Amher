@@ -13,16 +13,14 @@ public class UserObjectTest extends TestCase {
 	 *
 	 * @param testName name of the test case
 	 */
-	public UserObjectTest( String testName )
-	{
+	public UserObjectTest( String testName ) {
 	    super( testName );
 	}
 
 	/**
 	 * @return the suite of tests being tested
 	 */
-	public static Test suite()
-	{
+	public static Test suite() {
 	    return new TestSuite( PostObjectTest.class );
 	}
 
@@ -30,8 +28,7 @@ public class UserObjectTest extends TestCase {
 	 * Create a new user and save to db
 	 * @throws Exception 
 	 */
-	public void testCreateNewUser()
-	{
+	public void testCreateNewUser() {
 		UserObject user = new UserObject("George", "admin", "test@hotmail.com", "test1234");
 		user.setActiveScore(10000);
 		user.setAlias("gadmin");
@@ -44,8 +41,7 @@ public class UserObjectTest extends TestCase {
 		// 54fd1a2be221fd5112e3fb61
 	}
 	
-	public void testUpdateExistingUser() throws Exception
-	{
+	public void testUpdateExistingUser() throws Exception {
 		UserObject user = new UserObject("54fcc61fe221fd609e77ab6c");
 		user = user.load();
 		user.setActiveScore(80000);
@@ -53,4 +49,6 @@ public class UserObjectTest extends TestCase {
 		assertTrue("Save should succeed", dmlOperationState.isBulkSuccess());
 		assertEquals("User should be saved successfully", "54fcc61fe221fd609e77ab6c", user.getId());
 	}
+	
+	
 }
