@@ -7,18 +7,14 @@ public class RequestPostBuilder { //extends PostBuilder {
 	 private static volatile RequestPostBuilder INSTANCE = null;
 	 
 	    private RequestPostBuilder() {}
+	    
+	    private static class RequestPostBuilderHolder {
+	    	private static final RequestPostBuilder holder = new RequestPostBuilder();
+	    }
 	 
 	    //thread safe and performance  promote 
 	    public static  RequestPostBuilder getInstance() {
-	        if(INSTANCE == null){
-	             synchronized(RequestPostBuilder.class){
-	                 //when more than two threads run into the first null check same time, to avoid instanced more than one time, it needs to be checked again.
-	                 if(INSTANCE == null){ 
-	                     INSTANCE = new RequestPostBuilder();
-	                  }
-	              } 
-	        }
-	        return INSTANCE;
+	        return RequestPostBuilderHolder.holder;
 	    }
 	    
 //	@Override

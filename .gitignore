@@ -7,7 +7,6 @@ gnoring Eclipse Setting folder
 ######################
 /.classpath
 /.project
-/.metadata
 ######################
 #Ignoring following Self-dependent fixed files
 ######################

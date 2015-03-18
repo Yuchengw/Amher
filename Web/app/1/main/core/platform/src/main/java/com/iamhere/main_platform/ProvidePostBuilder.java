@@ -2,6 +2,7 @@ package com.iamhere.main_platform;
 
 import java.util.Date;
 
+import com.iamhere.main_platform.PostBuilderDirector;
 import com.iamhere.trashbin.ProvidePost;
 
 public class ProvidePostBuilder  {//extends PostBuilder{
@@ -10,17 +11,13 @@ public class ProvidePostBuilder  {//extends PostBuilder{
 	 
     private ProvidePostBuilder() {}
  
-    //thread safe and performance  promote 
+  //lazyload-on-demand
+    private static class ProvidePostBuilderHolder {
+    	private static final ProvidePostBuilder holder = new ProvidePostBuilder();
+    }
+ 
     public static  ProvidePostBuilder getInstance() {
-        if(INSTANCE == null){
-             synchronized(ProvidePostBuilder.class){
-                 //when more than two threads run into the first null check same time, to avoid instanced more than one time, it needs to be checked again.
-                 if(INSTANCE == null){ 
-                     INSTANCE = new ProvidePostBuilder();
-                  }
-              } 
-        }
-        return INSTANCE;
+        return ProvidePostBuilderHolder.holder;
     }
     
 //	@Override

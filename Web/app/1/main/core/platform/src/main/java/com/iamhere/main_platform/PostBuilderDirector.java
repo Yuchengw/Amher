@@ -14,18 +14,14 @@ public class PostBuilderDirector {
 	private static volatile PostBuilderDirector INSTANCE = null;
 	 
     private PostBuilderDirector() {}
+    
+    //lazyload-on-demand
+    private static class PostBuilderDirectorHolder {
+    	private static final PostBuilderDirector holder = new PostBuilderDirector();
+    }
  
-    //thread safe and performance  promote 
     public static  PostBuilderDirector getInstance() {
-        if(INSTANCE == null){
-             synchronized(PostBuilderDirector.class){
-                 //when more than two threads run into the first null check same time, to avoid instanced more than one time, it needs to be checked again.
-                 if(INSTANCE == null){ 
-                     INSTANCE = new PostBuilderDirector();
-                  }
-              } 
-        }
-        return INSTANCE;
+        return PostBuilderDirectorHolder.holder;
     }
     
 //	public RequestPost constructRequestPost(String subject, String location, int quantity, Period period, double cost, UserObject creator) {
