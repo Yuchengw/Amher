@@ -1,0 +1,8 @@
+#encoding=UTF-8
+#version=1
+org.eclipse.m2e.wtp.jaxrs.source,1.1.0.20140611-1646,plugins/org.eclipse.m2e.wtp.jaxrs.source_1.1.0.20140611-1646.jar,-1,false
+org.eclipse.m2e.wtp.jpa.source,1.1.0.e43-20140611-1648,plugins/org.eclipse.m2e.wtp.jpa.source_1.1.0.e43-20140611-1648.jar,-1,false
+org.eclipse.m2e.wtp.jsf.source,1.1.0.20140611-1646,plugins/org.eclipse.m2e.wtp.jsf.source_1.1.0.20140611-1646.jar,-1,false
+org.eclipse.m2e.wtp.overlay.source,1.1.0.20140611-1646,plugins/org.eclipse.m2e.wtp.overlay.source_1.1.0.20140611-1646.jar,-1,false
+org.eclipse.m2e.wtp.overlay.ui.source,1.1.0.20140611-1646,plugins/org.eclipse.m2e.wtp.overlay.ui.source_1.1.0.20140611-1646.jar,-1,false
+org.eclipse.m2e.wtp.source,1.1.0.20140611-1646,plugins/org.eclipse.m2e.wtp.source_1.1.0.20140611-1646.jar,-1,false

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="org.eclipse.m2e.wtp.jsf.feature.source" version="1.1.0.20140611-1646" plugin="org.eclipse.m2e.wtp.jsf" label="%featureName" provider-name="%providerName">
+  <includes id="org.eclipse.m2e.wtp.jsf.feature" version="1.1.0.20140611-1646"/>
+  <description>
+      %description
+   </description>
+  <copyright>
+      %copyright
+   </copyright>
+  <license url="%licenseURL">
+      %license
+   </license>
+  <plugin id="org.eclipse.m2e.wtp.jsf.source" version="1.1.0.20140611-1646" download-size="0" install-size="0" unpack="false"/>
+</feature>

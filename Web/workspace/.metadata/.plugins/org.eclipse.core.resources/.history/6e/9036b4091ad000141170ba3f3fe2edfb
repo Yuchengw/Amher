@@ -1,0 +1,16 @@
+package com.amher.bussiness.bean;
+
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+/**
+ * This class could be used generically, partner list
+ * 
+ * */
+
+@XmlRootElement(name="users")
+public class UserList {
+
+}

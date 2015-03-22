@@ -1,0 +1,26 @@
+package com.amher.bean.rest.controller;
+
+import java.io.StringReader;
+import java.util.List;
+
+import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
+
+import org.springframework.oxm.jaxb.Jaxb2Marshaller;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.amher.bussiness.bean.User;
+import com.amher.bussiness.bean.UserList;
+import com.amher.lib.objectProvider.UserProvider;
+import dw.spring3.rest.bean.EmployeeList;
+import dw.spring3.rest.ds.EmployeeDS;
+
+
+public class UserController {
+
+}

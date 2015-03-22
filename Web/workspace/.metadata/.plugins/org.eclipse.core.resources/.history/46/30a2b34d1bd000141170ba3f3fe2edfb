@@ -1,0 +1,5 @@
+package com.amher.lib.objectProvider;
+
+public class UserProvider {
+
+}

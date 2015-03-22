@@ -1,0 +1,49 @@
+package com.amher.lib.objectProvider;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import com.amher.bussiness.bean.User;
+import com.amher.bussiness.bean.UserList;
+
+public class UserProvider {
+	
+	private static Map<Long, User> allUsers;
+	
+	static {
+		allUsers = new HashMap<Long, User>();
+		User u1 = new User(1L, "Yucheng Wang", "ycwmike@gmail.com");
+		User u2 = new User(2L, "George Lin", "gglin@gmail.com");
+		allUsers.put(u1.getId(), u1);
+		allUsers.put(u2.getId(), u2);
+	}
+	
+	public void add(User u) {
+		allUsers.put(u.getId(), u);
+	}
+
+	public User get(long id) {
+		return allUsers.get(id);
+	}
+
+	public List<User> getAll() {
+		List<User> employees = new ArrayList<User>();
+		for( Iterator<Employee> it = allUsers.values().iterator(); it.hasNext(); ) {
+			Employee e = it.next();
+			employees.add(e);
+		}
+		return employees;
+	}
+
+	public void remove(long id) {
+		allEmployees.remove(id);
+	}
+
+	public void update(Employee e) {
+		allEmployees.put(e.getId(), e);
+	}
+
+}

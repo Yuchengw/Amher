@@ -1,0 +1,5 @@
+package com.amher.bussiness.bean;
+
+public class UserList {
+
+}
