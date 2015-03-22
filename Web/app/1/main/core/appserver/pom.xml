@@ -1,22 +1,22 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	
-	<!--  This is Appserver Pom setting, @author Yucheng Wang -->
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.amher</groupId>
 	<artifactId>appserver</artifactId>
 	<packaging>war</packaging>
 	<version>1.0.0</version>
 	<name>${artifactId}</name>
-	<description>Appserver POM for Amher</description>
+	<description>Appserver POM for Amher, Author:Yucheng</description>
 	
 	<!-- Pom properties -->
 	<properties>
     	<jetty.version>9.2.7.v20150116</jetty.version>
-    	<junit.versioN>4.10</junit.versioN>
-    	<org.springframework.version>3.2.13</org.springframework.version>
+    	<junit.version>4.10</junit.version>
+    	<org.springframework.version>3.2.13.RELEASE</org.springframework.version>
     	<commons-lang.version>20030203.000129</commons-lang.version>
     	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    	<maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
+    	<maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
     	<maven.war.plugin.version>2.2</maven.war.plugin.version>
  	</properties>
 	
@@ -36,6 +36,25 @@
  
  	<!--  dependencies Start -->
     <dependencies>
+      <!--   -->
+      <dependency>
+          <groupId>commons-lang</groupId>
+          <artifactId>commons-lang</artifactId>
+          <version>${commons-lang.version}</version>
+      </dependency>
+      <!--  Unit Test  -->
+      <dependency>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+          <version>${junit.version}</version>
+          <scope>test</scope>
+      </dependency>
+      <!-- Jackson convert jpo to json format  -->
+      <dependency>
+    	<groupId>org.codehaus.jackson</groupId>
+    	<artifactId>jackson-mapper-asl</artifactId>
+    	<version>1.9.5</version>
+	  </dependency>
   	  <!--  Jetty Related Dependencies -->
       <dependency>
       	  <groupId>org.eclipse.jetty</groupId>
@@ -58,36 +77,23 @@
     	  <artifactId>spring-webmvc</artifactId>
     	  <version>${org.springframework.version}</version>
 	  </dependency>
-      <dependency>
-  		  <groupId>org.springframework</groupId>
-  		  <artifactId>org.springframework.core</artifactId>
-  		  <version>${org.springframework.version}</version>
-	   </dependency>
-      <dependency>
+	  <dependency>
     	  <groupId>org.springframework</groupId>
     	  <artifactId>spring-test</artifactId>
     	  <version>${org.springframework.version}</version>
     	  <scope>test</scope> 
       </dependency>
-      <!--   -->
       <dependency>
-          <groupId>commons-lang</groupId>
-          <artifactId>commons-lang</artifactId>
-          <version>${commons-lang.version}</version>
+  		  <groupId>org.springframework</groupId>
+  		  <artifactId>org.springframework.core</artifactId>
+  		  <version>${org.springframework.version}</version>
+	   </dependency>
+	  <!--  add for Ja2x -->
+	  <dependency>
+        <groupId>org.springframework.ws</groupId>
+        <artifactId>spring-ws-core</artifactId>
+        <version>2.1.4.RELEASE</version>
       </dependency>
-      <!--  Unit Test  -->
-      <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>${junit.version}</version>
-          <scope>test</scope>
-      </dependency>
-      <!-- Jackson convert jpo to json format  -->
-      <dependency>
-    	<groupId>org.codehaus.jackson</groupId>
-    	<artifactId>jackson-mapper-asl</artifactId>
-    	<version>1.9.5</version>
-	  </dependency>
      </dependencies>
  
  	<!--  main build start -->
@@ -142,6 +148,4 @@
 	     </plugin> -->
 	   </plugins>
 	 </build>
-  
-<!--  end Pom -->
 </project>
