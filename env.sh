@@ -19,18 +19,12 @@ fi
 
 function set_amher_ENV () {
 	export AMHER_HOME="$1"
-	export WEB_HOME="$AMHER_HOME/web"
+	export WEB_HOME="$AMHER_HOME/Web"
 	export WEB_TOOLS_HOME="$WEB_HOME/tools"
 	export WEB_JDK_HOME="$WEB_TOOLS_HOME/jdk"
 	#TODO: select the correct jdk home according to the os version
-<<<<<<< HEAD
-	export JAVA_HOME="$WEB_JDK_HOME/Linux/$2/"
-	export PATH="$1:$JAVA_HOME/bin:$PATH"
-=======
 	export JAVA_HOME="$WEB_JDK_HOME/Linux/$2"
-	export PATH="$1:$JAVA_HOME/bin"
->>>>>>> 23cf9d51cba05f914d5e89b73c1219c86f6862d8
-
+	export PATH="$PATH:$1:$JAVA_HOME/bin"
 	if [ "$OSTYPE" == Darwin ]; then
 		export JAVA_HOME="$WEB_JDK_HOME/Mac/$2"
 	fi

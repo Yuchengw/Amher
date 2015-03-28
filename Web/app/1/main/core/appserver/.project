@@ -39,4 +39,10 @@
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+	<variableList>
+		<variable>
+			<name>JAVA_HOME</name>
+			<value>file:/home/yucheng-slave/Amher/Web/tools/jdk/Linux/jdk1.7.0_80</value>
+		</variable>
+	</variableList>
 </projectDescription>
