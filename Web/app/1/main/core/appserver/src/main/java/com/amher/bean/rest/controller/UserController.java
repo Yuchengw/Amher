@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.amher.business.bean.User;
 import com.amher.business.bean.UserList;
@@ -24,7 +24,7 @@ import com.amher.lib.objectProvider.UserProvider;
  * @author yucheng
  * @version 1
  * */
-
+@Controller
 public class UserController {
 	
 	private static final String XML_VIEW_NAME = "users";
@@ -41,39 +41,39 @@ public class UserController {
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, value="/user/{id}")
-	public ModelAndView getUser(@PathVariable String id) {
+	public @ResponseBody User getUser(@PathVariable String id) {
 		User e = userProvider.get(Long.parseLong(id));
-		return new ModelAndView(XML_VIEW_NAME, "object", e);
+		return e;
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/user/{id}")
-	public ModelAndView updateEmployee(@RequestBody String body) {
+	public @ResponseBody User updateUser(@RequestBody String body) {
 		Source source = new StreamSource(new StringReader(body));
 		User u = (User) jaxb2Mashaller.unmarshal(source);
 		userProvider.update(u);
-		return new ModelAndView(XML_VIEW_NAME, "object", u);
+		return u;
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="/employee")
-	public ModelAndView addEmployee(@RequestBody String body) {
+	@RequestMapping(method=RequestMethod.POST, value="/user")
+	public @ResponseBody User addUser(@RequestBody String body) {
 		Source source = new StreamSource(new StringReader(body));
 		User u = (User) jaxb2Mashaller.unmarshal(source);
 		userProvider.add(u);
-		return new ModelAndView(XML_VIEW_NAME, "object", u);
+		return u;
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE, value="/employee/{id}")
-	public ModelAndView removeEmployee(@PathVariable String id) {
+	@RequestMapping(method=RequestMethod.DELETE, value="/user/{id}")
+	public @ResponseBody UserList removeUser(@PathVariable String id) {
 		userProvider.remove(Long.parseLong(id));
 		List<User> users = userProvider.getAll();
 		UserList list = new UserList(users);
-		return new ModelAndView(XML_VIEW_NAME, "users", list);
+		return list;
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, value="/users")
-	public ModelAndView getEmployees() {
+	public @ResponseBody UserList getUsers() {
 		List<User> users = userProvider.getAll();
 		UserList list = new UserList(users);
-		return new ModelAndView(XML_VIEW_NAME, "users", list);
+		return list;
 	}
 }
