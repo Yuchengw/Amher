@@ -1,19 +1,19 @@
 package com.amher.business.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
-
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
  * This class could be used generically, partner list
  * 
  * */
 
-@XmlRootElement(name="users")
-public class UserList {
+public class UserList implements Serializable {
 	
+	private static final long serialVersionUID = -1370183045720704453L;
+
 	private int count;
 	private List<User> users;
 	
@@ -32,12 +32,13 @@ public class UserList {
 		this.count = count;
 	}
 	
-	@XmlElement(name="employee")
-	public List<User> getEmployees() {
+	@JsonSerialize
+	public List<User> getUsers() {
 		return users;
 	}
-	public void setEmployees(List<User> employees) {
-		this.users = employees;
+	
+	public void setUsers(List<User> users) {
+		this.users = users;
 	}
 	
 }

@@ -25,9 +25,7 @@ import com.amher.lib.objectProvider.UserProvider;
  * @version 1
  * */
 @Controller
-public class UserController {
-	
-	private static final String XML_VIEW_NAME = "users";
+public class UserControllerImpl implements UserController {
 	
 	private UserProvider userProvider;
 	private Jaxb2Marshaller jaxb2Mashaller;
@@ -40,13 +38,13 @@ public class UserController {
 		this.jaxb2Mashaller = jaxb2Mashaller;
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/user/{id}")
+	@RequestMapping(method=RequestMethod.GET, value=UserRestURIConstants.GET_USER)
 	public @ResponseBody User getUser(@PathVariable String id) {
 		User e = userProvider.get(Long.parseLong(id));
 		return e;
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT, value="/user/{id}")
+	@RequestMapping(method=RequestMethod.PUT, value=UserRestURIConstants.UPDATE_USER)
 	public @ResponseBody User updateUser(@RequestBody String body) {
 		Source source = new StreamSource(new StringReader(body));
 		User u = (User) jaxb2Mashaller.unmarshal(source);
@@ -54,7 +52,7 @@ public class UserController {
 		return u;
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="/user")
+	@RequestMapping(method=RequestMethod.POST, value=UserRestURIConstants.CREATE_USER)
 	public @ResponseBody User addUser(@RequestBody String body) {
 		Source source = new StreamSource(new StringReader(body));
 		User u = (User) jaxb2Mashaller.unmarshal(source);
@@ -62,7 +60,7 @@ public class UserController {
 		return u;
 	}
 	
-	@RequestMapping(method=RequestMethod.DELETE, value="/user/{id}")
+	@RequestMapping(method=RequestMethod.DELETE, value=UserRestURIConstants.DELETE_USER)
 	public @ResponseBody UserList removeUser(@PathVariable String id) {
 		userProvider.remove(Long.parseLong(id));
 		List<User> users = userProvider.getAll();
@@ -70,7 +68,7 @@ public class UserController {
 		return list;
 	}
 	
-	@RequestMapping(method=RequestMethod.GET, value="/users")
+	@RequestMapping(method=RequestMethod.GET, value=UserRestURIConstants.GET_ALL_USER)
 	public @ResponseBody UserList getUsers() {
 		List<User> users = userProvider.getAll();
 		UserList list = new UserList(users);

@@ -1,14 +1,20 @@
 package com.amher.business.bean;
 
+import java.io.Serializable;
+import java.util.Date;
+ 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.DateSerializer;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-@XmlRootElement(name="user")
-public class User {
+public class User implements Serializable {
+	
+    private static final long serialVersionUID = -7788619177798333712L;
 	
 	private long id;
 	private String name;
 	private String email;
+	private Date createdDate;
+	private Date lastModifiedDate;
 	
 	public User() {}
 	
@@ -21,6 +27,7 @@ public class User {
 	public long getId() {
 		return id;
 	}
+	
 	public void setId(long id) {
 		this.id = id;
 	}
@@ -28,6 +35,7 @@ public class User {
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -35,8 +43,26 @@ public class User {
 	public String getEmail() {
 		return email;
 	}
+	
 	public void setEmail(String email) {
 		this.email = email;
 	}
 	
+	@JsonSerialize(using=DateSerializer.class)
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+	
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+	
+    @JsonSerialize(using=DateSerializer.class)
+    public Date getLastModifiedDate() {
+    	return lastModifiedDate;
+    }
+	
+    public void setLastModifiedDate(Date modifiedDate) {
+    	this.lastModifiedDate = modifiedDate;
+    }
 }
