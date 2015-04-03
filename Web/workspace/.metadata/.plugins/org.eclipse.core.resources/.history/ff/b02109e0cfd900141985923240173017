@@ -1,0 +1,43 @@
+package com.amher.business.bean;
+
+import java.io.Serializable;
+import java.util.List;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+public class PostList implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 77091525724809582L;
+	
+	private int count;
+	private List<PostComment> postcomments;
+
+	public PostCommentList() {
+	}
+
+	public PostCommentList(List<PostComment> postcomments) {
+		this.postcomments = postcomments;
+		this.count = postcomments.size();
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	@JsonSerialize
+	public List<PostComment> getPostComments() {
+		return postcomments;
+	}
+
+	public void setUsers(List<PostComment> postcomments) {
+		this.postcomments = postcomments;
+	}
+	
+}

@@ -37,7 +37,8 @@ public class Post extends BeanObject {
 	private String type;
 	private Date expireDate;
 
-	public Post(User creator, String subject, String location, int quantity) {
+	public Post(String id, User creator, String subject, String location, int quantity) {
+		setId(id);
 		setCreator(creator);
 		setSubject(subject);
 		setLocation(location);

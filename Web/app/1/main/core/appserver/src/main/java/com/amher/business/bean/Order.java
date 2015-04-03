@@ -33,10 +33,10 @@ public class Order extends BeanObject {
 		setSolder(solder);
 	}
 
-	public Order(User buyer, User solder, String id) {
+	public Order(String id, User buyer, User solder) {
+		setId(id);
 		setBuyer(buyer);
 		setSolder(solder);
-		setId(id);
 	}
 
 	// Getter and Setter

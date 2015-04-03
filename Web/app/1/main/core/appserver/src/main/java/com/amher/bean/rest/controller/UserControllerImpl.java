@@ -62,7 +62,7 @@ public class UserControllerImpl implements UserController {
 	
 	@RequestMapping(method=RequestMethod.DELETE, value=UserRestURIConstants.DELETE_USER)
 	public @ResponseBody UserList removeUser(@PathVariable String id) {
-		userProvider.remove(Long.parseLong(id));
+		userProvider.remove(Integer.parseInt(id));
 		List<User> users = userProvider.getAll();
 		UserList list = new UserList(users);
 		return list;

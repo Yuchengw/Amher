@@ -1,10 +1,15 @@
 package com.amher.business.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-public class PostCommentList extends BeanObject {
+/**
+ * @author yucheng
+ * @version 1
+ * */
+public class PostCommentList implements Serializable {
 
 	/**
 	 * 
@@ -12,14 +17,14 @@ public class PostCommentList extends BeanObject {
 	private static final long serialVersionUID = -7165192163461913556L;
 	
 	private int count;
-	private List<User> users;
+	private List<PostComment> postcomments;
 
 	public PostCommentList() {
 	}
 
-	public PostCommentList(List<User> users) {
-		this.users = users;
-		this.count = users.size();
+	public PostCommentList(List<PostComment> postcomments) {
+		this.postcomments = postcomments;
+		this.count = postcomments.size();
 	}
 
 	public int getCount() {
@@ -31,11 +36,24 @@ public class PostCommentList extends BeanObject {
 	}
 
 	@JsonSerialize
-	public List<User> getUsers() {
-		return users;
+	public List<PostComment> getPostComments() {
+		return postcomments;
 	}
 
-	public void setUsers(List<User> users) {
-		this.users = users;
+	public void setUsers(List<PostComment> postcomments) {
+		this.postcomments = postcomments;
+	}
+
+	// extension
+	public void add(PostComment pm1) {
+		getPostComments().add(pm1);
+	}
+
+	public PostComment get(int index) {
+		return getPostComments().get(index);
+	}
+
+	public void remove(int index) {
+		getPostComments().remove(index);
 	}
 }

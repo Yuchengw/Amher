@@ -1,0 +1,7 @@
+package com.amher.business.bean;
+
+import java.io.Serializable;
+
+public class OrderList implements Serializable {
+
+}

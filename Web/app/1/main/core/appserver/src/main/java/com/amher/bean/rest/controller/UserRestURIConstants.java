@@ -1,5 +1,9 @@
 package com.amher.bean.rest.controller;
 
+/**
+ * @author yucheng
+ * @version 1
+ * */
 public class UserRestURIConstants {
 	 public static final String DUMMY_USER = "/user/dummy";
 	 public static final String GET_USER = "/user/{id}";

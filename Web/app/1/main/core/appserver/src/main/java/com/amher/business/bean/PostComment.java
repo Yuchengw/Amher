@@ -18,14 +18,21 @@ public class PostComment extends BeanObject {
 										// as well
 	private User createdBy;
 
+
+	public PostComment(String id) {
+		this.Id = id;
+		super.setId(id);
+	}
+	
 	public PostComment(Post parent, String comment) {
 		setParentPost(parent);
 		setCommentBody(comment);
 	}
 
-	public PostComment(String id) {
-		this.Id = id;
-		super.setId(id);
+	public PostComment(String id, Post parent, String comment) {
+		setId(id);
+		setParentPost(parent);
+		setCommentBody(comment);
 	}
 	
 	// Getter and Setter

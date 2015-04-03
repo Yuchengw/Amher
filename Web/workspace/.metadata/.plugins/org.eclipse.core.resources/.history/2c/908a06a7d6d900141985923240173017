@@ -1,0 +1,58 @@
+package com.amher.lib.objectProvider;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import com.amher.business.bean.PostComment;
+import com.amher.business.bean.PostCommentComment;
+import com.amher.business.bean.PostCommentCommentList;
+import com.amher.business.bean.PostCommentList;
+import com.amher.business.bean.User;
+
+/**
+ * @author yucheng
+ * @version 1
+ * */
+public class PostCommentCommentProvider {
+	
+	private static PostCommentList allPostComments;
+	/**
+	 * mocking
+	 * */
+	static {
+		allPostComments = new PostCommentList();
+		PostComment p1 = new PostComment("1", new User("1", "Yucheng", "Wang",
+				"ycwmike@gmail.com"), "PostComment1", "China", 1);
+		PostComment p2 = new PostComment("2", new User("2", "George", "Lin",
+				"gglin@gmail.com"), "PostComment2", "USA", 2);
+		allPostComments.add(p1);
+		allPostComments.add(p2);
+	}
+
+	public void add(PostComment user) {
+		allPostComments.add(user);
+	}
+
+	public PostComment get(int index) {
+		return allPostComments.get(index);
+	}
+
+	public List<PostComment> getAll() {
+		return allPostComments.getPostComments();
+	}
+
+	public void remove(int id) {
+		allPostComments.remove(id);
+	}
+
+	/**
+	 * update is expensive, think before do it
+	 * */
+	public void update(PostComment oldPostComment, PostComment newPostComment) {
+		List<PostComment> allPostCommentList = allPostComments.getPostComments();
+		allPostCommentList.set(allPostCommentList.indexOf(oldPostComment), newPostComment);
+	}
+}

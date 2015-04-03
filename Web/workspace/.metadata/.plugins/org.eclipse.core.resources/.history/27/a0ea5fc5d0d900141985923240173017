@@ -1,0 +1,14 @@
+package com.amher.lib.objectProvider;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import com.amher.business.bean.Post;
+import com.amher.business.bean.PostList;
+
+public class PostProvider {
+
+}

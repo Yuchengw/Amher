@@ -1,0 +1,48 @@
+package com.amher.lib.objectProvider;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import com.amher.business.bean.Post;
+import com.amher.business.bean.PostList;
+import com.amher.business.bean.User;
+
+public class PostProvider {
+private static Map<String, User> allUsers;
+	
+	static {
+		allUsers = new HashMap<String, User>();
+		User u1 = new User("1", "Yucheng", "Wang", "ycwmike@gmail.com");
+		User u2 = new User("2", "George", "Lin", "gglin@gmail.com");
+		allUsers.put(u1.getId(), u1);
+		allUsers.put(u2.getId(), u2);
+	}
+	
+	public void add(User u) {
+		allUsers.put(u.getId(), u);
+	}
+
+	public User get(String id) {
+		return allUsers.get(id);
+	}
+
+	public List<User> getAll() {
+		List<User> users = new ArrayList<User>();
+		for( Iterator<User> it = allUsers.values().iterator(); it.hasNext(); ) {
+			User u = it.next();
+			users.add(u);
+		}
+		return users;
+	}
+
+	public void remove(long id) {
+		allUsers.remove(id);
+	}
+
+	public void update(User u) {
+		allUsers.put(u.getId(), u);
+	}
+}

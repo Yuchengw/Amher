@@ -1,0 +1,49 @@
+package com.amher.lib.objectProvider;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import com.amher.business.bean.User;
+import com.amher.business.bean.UserList;
+
+public class UserProvider {
+
+	private static UserList allUsers;
+
+	static {
+		UserList allUsers = new UserList();
+		User u1 = new User("1", "Yucheng", "Wang", "ycwmike@gmail.com");
+		User u2 = new User("2", "George", "Lin", "gglin@gmail.com");
+		allUsers.add(u1);
+		allUsers.add(u2);
+	}
+
+	public void add(User user) {
+		allUsers.add(user);
+	}
+
+	public User get(int index) {
+		return allUsers.get(index);
+	}
+
+	public List<User> getAll() {
+		return allUsers.getUsers();
+	}
+
+	public void remove(int id) {
+		allUsers.remove(id);
+	}
+
+	public void update(User u) {
+		for (Iterator<String> iterator = list.iterator(); iterator.hasNext();) {
+		    String string = iterator.next();
+		    if (string.isEmpty()) {
+		        // Remove the current element from the iterator and the list.
+		        iterator.remove();
+		    }
+		}
+	}
+}

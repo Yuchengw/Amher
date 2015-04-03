@@ -1,0 +1,14 @@
+package com.amher.bean.rest.controller;
+
+/**
+ * @author yucheneg
+ * @version 1
+ * */
+public class OrderControllerConstants {
+	public static final String DUMMY_order = "/order/dummy";
+	public static final String GET_order = "/order/{id}";
+	public static final String GET_ALL_order = "/orders";
+	public static final String CREATE_order = "/order/create";
+	public static final String UPDATE_order = "/order/update/{id}";
+	public static final String DELETE_order = "/order/delete/{id}";
+}

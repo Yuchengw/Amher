@@ -1,49 +1,47 @@
 package com.amher.lib.objectProvider;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import com.amher.business.bean.User;
 import com.amher.business.bean.UserList;
 
 public class UserProvider {
-	
-	private static Map<String, User> allUsers;
-	
+
+	private static UserList allUsers;
+
 	static {
-		allUsers = new HashMap<String, User>();
+		UserList allUsers = new UserList();
 		User u1 = new User("1", "Yucheng", "Wang", "ycwmike@gmail.com");
 		User u2 = new User("2", "George", "Lin", "gglin@gmail.com");
-		allUsers.put(u1.getId(), u1);
-		allUsers.put(u2.getId(), u2);
-	}
-	
-	public void add(User u) {
-		allUsers.put(u.getId(), u);
+		allUsers.add(u1);
+		allUsers.add(u2);
 	}
 
-	public User get(String id) {
-		return allUsers.get(id);
+	public void add(User user) {
+		allUsers.add(user);
+	}
+
+	public User get(String index) {
+		return allUsers.get(Integer.parseInt(index));
 	}
 
 	public List<User> getAll() {
-		List<User> users = new ArrayList<User>();
-		for( Iterator<User> it = allUsers.values().iterator(); it.hasNext(); ) {
-			User u = it.next();
-			users.add(u);
-		}
-		return users;
+		return allUsers.getUsers();
 	}
 
-	public void remove(long id) {
+	public void remove(int id) {
 		allUsers.remove(id);
 	}
-
-	public void update(User u) {
-		allUsers.put(u.getId(), u);
+	
+	/**
+	 * update is expensive, think before do it
+	 * */
+	public void update(User updateUser) {
+		update(updateUser.getId(), updateUser);
 	}
-
+	
+	public void update(String index, User newUser) {
+		List<User> allUserList = allUsers.getUsers();
+		allUserList.set(Integer.parseInt(index), newUser);
+	}
 }
