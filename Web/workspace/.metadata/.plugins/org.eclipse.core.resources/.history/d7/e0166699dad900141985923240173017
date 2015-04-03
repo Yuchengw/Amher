@@ -17,7 +17,7 @@
 	<mvc:annotation-driven />
 
     <!-- Aspects -->
-    <bean id="logAspect" class="com.amher.service.aop.*" />
+    <bean id="logAspect" class="com.amher.service.aop.UserControllerAOPImpl" />
 
 	<!-- Let Spring be notice of Rest Controllers -->
     <context:component-scan base-package="com.amher.bean.rest.controller" />
@@ -30,15 +30,6 @@
     <bean id="userControllerImpl" class="com.amher.bean.rest.controller.UserControllerImpl">
         <property name="userProvider" ref="userProvider" />
         <!--<property name="jaxb2Mashaller" ref="jaxbMarshaller" />-->
-    </bean>
-    <bean id="PostControllerImpl" class="com.amher.bean.rest.controller.PostControllerImpl">
-        <property name="postProvider" ref="postProvider" />
-    </bean>
-    <bean id="PostCommentControllerImpl" class="com.amher.bean.rest.controller.PostCommentControllerImpl">
-        <property name="postCommentProvider" ref="postCommentProvider"/>    
-    </bean>
-    <bean id="OrderControllerImpl" class="com.amher.bean.rest.controller.OrderControllerImpl">
-        <property name="orderProvider" ref="orderProvider"/>
     </bean>
     
     <!-- Configure bean to convert JSON to POJO and vice versa -->

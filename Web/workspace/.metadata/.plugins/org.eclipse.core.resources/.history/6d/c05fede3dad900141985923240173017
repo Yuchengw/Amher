@@ -35,10 +35,7 @@
         <property name="postProvider" ref="postProvider" />
     </bean>
     <bean id="PostCommentControllerImpl" class="com.amher.bean.rest.controller.PostCommentControllerImpl">
-        <property name="postCommentProvider" ref="postCommentProvider"/>    
-    </bean>
-    <bean id="OrderControllerImpl" class="com.amher.bean.rest.controller.OrderControllerImpl">
-        <property name="orderProvider" ref="orderProvider"/>
+        <property name="postCommentProvider" ref="postCommentProvider">    
     </bean>
     
     <!-- Configure bean to convert JSON to POJO and vice versa -->

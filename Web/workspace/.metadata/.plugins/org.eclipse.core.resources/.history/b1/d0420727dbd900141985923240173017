@@ -13,7 +13,5 @@
     
 	<!--  provider object aim to providing Business object to Business layer -->
 	<bean id="userProvider" class="com.amher.lib.objectProvider.UserProvider" /> 
-    <bean id="postProvider" class="com.amher.lib.objectProvider.PostProvider"/>
-    <bean id="postCommentProvider" class="com.amher.lib.objectProvider.PostCommentProvider"/>
-    <bean id="orderProvider" class="com.amehr.lib.objectProvider.OrderProvider"/>
+
 </beans>

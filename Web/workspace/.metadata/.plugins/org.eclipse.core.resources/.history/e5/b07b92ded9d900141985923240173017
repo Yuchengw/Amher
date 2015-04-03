@@ -1,0 +1,5 @@
+package com.amher.service.aop;
+
+public class PostControllerAOPImpl {
+
+}
