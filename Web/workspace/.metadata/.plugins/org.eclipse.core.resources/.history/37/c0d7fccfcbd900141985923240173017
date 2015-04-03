@@ -1,0 +1,72 @@
+package com.amher.business.bean;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.DateSerializer;
+
+/**
+ * @author yucheng
+ * @version 1
+ * */
+public class PostComment extends BeanObject implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1914772240679950717L;
+
+	private Post parentPost;
+	private String Id;
+	private String commentBody;
+	private PostComment childComment; // TODO: is this only for child or sibling
+										// as well
+	private User createdBy;
+
+	public PostComment(Post parent, String comment) {
+		setParentPost(parent);
+		setCommentBody(comment);
+	}
+
+	public PostComment(String id) {
+		setId(id);
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	// Getter and Setter
+	public Post getParentPost() {
+		return parentPost;
+	}
+
+	public void setParentPost(Post parentPost) {
+		this.parentPost = parentPost;
+	}
+
+	public String getCommentBody() {
+		return commentBody;
+	}
+
+	public void setCommentBody(String commentBody) {
+		this.commentBody = commentBody;
+	}
+
+	public PostComment getChildComment() {
+		return childComment;
+	}
+
+	public void setChildComment(PostComment childComment) {
+		this.childComment = childComment;
+	}
+
+	public User getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(User createdBy) {
+		this.createdBy = createdBy;
+	}
+}

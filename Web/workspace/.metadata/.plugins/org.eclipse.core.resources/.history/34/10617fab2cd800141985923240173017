@@ -1,0 +1,24 @@
+package com.amher.service.logging;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+ 
+@Aspect
+public class UserControllerLogging {
+ 
+	/**
+	 * Before UserController's opertaions
+	 * */
+	@Pointcut("execution * UserController.*(..)"
+			+ ")")
+    public void UserControllerBeforePointcutter() {}
+	
+	//@Before("execution(* com.amher.bean.rest.controller.UserControllerInterface.(..))")
+	@Before("UserControllerBeforePointcutter()")
+	public void logBefore(JoinPoint joinPoint) {
+		System.out.println("Entering : " + joinPoint.getSignature().getName());
+	}
+ 
+}

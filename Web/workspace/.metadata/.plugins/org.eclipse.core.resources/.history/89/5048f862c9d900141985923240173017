@@ -1,0 +1,59 @@
+package com.amher.business.bean;
+
+public class PostComment {
+	private Post parentPost;
+	// TODO: to keep it simple now and not consider the rendering
+	private String commentBody;
+	private PostComment childComment; // TODO: is this only for child or sibling
+										// as well
+	private User createdBy;
+
+	private DBPostComment dbComment;
+
+	public PostComment(Post parent, String comment) {
+		setParentPost(parent);
+		setCommentBody(comment);
+	}
+
+	public PostComment(String id) {
+		setId(id);
+	}
+
+	/* ===================== Setters and Getters ============================= */
+	public Post getParentPost() {
+		return parentPost;
+	}
+
+	public void setParentPost(Post parentPost) {
+		this.parentPost = parentPost;
+		dbComment.setParentPostWithEntity(parentPost);
+	}
+
+	public String getCommentBody() {
+		return commentBody;
+	}
+
+	public void setCommentBody(String commentBody) {
+		this.commentBody = commentBody;
+		dbComment.setCommentBody(commentBody);
+	}
+
+	public PostComment getChildComment() {
+		return childComment;
+	}
+
+	public void setChildComment(PostComment childComment) {
+		this.childComment = childComment;
+		dbComment.setChildCommentWithEntity(childComment);
+	}
+
+	public User getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(User createdBy) {
+		this.createdBy = createdBy;
+		dbComment.setCreatedByWithEntity(createdBy);
+	}
+
+}

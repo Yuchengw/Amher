@@ -1,0 +1,80 @@
+package com.amher.business.bean;
+
+public class PostComment {
+	private Post parentPost;
+	// TODO: to keep it simple now and not consider the rendering
+	private String commentBody;
+	private PostComment childComment; // TODO: is this only for child or sibling
+										// as well
+	private User createdBy;
+
+	private DBPostComment dbComment;
+
+	/* ===================== Constructors ============================= */
+	public PostComment(Post parent, String comment) {
+		dbComment = new DBPostComment();
+		setParentPost(parent);
+		setCommentBody(comment);
+	}
+
+	public PostComment(DBPostComment db) {
+		this.dbComment = db;
+		reloadAllFieldInformationFromDbObject();
+	}
+
+	public PostComment(String id) {
+		dbComment = new DBPostComment(id);
+		setId(id);
+	}
+
+	/* ===================== Setters and Getters ============================= */
+	public Post getParentPost() {
+		return parentPost;
+	}
+
+	public void setParentPost(Post parentPost) {
+		this.parentPost = parentPost;
+		dbComment.setParentPostWithEntity(parentPost);
+	}
+
+	public String getCommentBody() {
+		return commentBody;
+	}
+
+	public void setCommentBody(String commentBody) {
+		this.commentBody = commentBody;
+		dbComment.setCommentBody(commentBody);
+	}
+
+	public PostComment getChildComment() {
+		return childComment;
+	}
+
+	public void setChildComment(PostComment childComment) {
+		this.childComment = childComment;
+		dbComment.setChildCommentWithEntity(childComment);
+	}
+
+	public User getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(User createdBy) {
+		this.createdBy = createdBy;
+		dbComment.setCreatedByWithEntity(createdBy);
+	}
+
+	/* ===================== Override super method ============================= */
+	@Override
+	public void saveHook_Validate(DmlValidationHandler dml) {
+		if (getCreatedBy() == null) {
+			dml.addError("Post creator is not set!");
+		}
+		if (getParentPost() == null) {
+			dml.addError("Parent post is forget to set!");
+		}
+
+		super.saveHook_Validate(dml);
+	}
+	
+}

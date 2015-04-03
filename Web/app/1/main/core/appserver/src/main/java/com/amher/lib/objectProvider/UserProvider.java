@@ -11,12 +11,12 @@ import com.amher.business.bean.UserList;
 
 public class UserProvider {
 	
-	private static Map<Long, User> allUsers;
+	private static Map<String, User> allUsers;
 	
 	static {
-		allUsers = new HashMap<Long, User>();
-		User u1 = new User(1L, "Yucheng Wang", "ycwmike@gmail.com");
-		User u2 = new User(2L, "George Lin", "gglin@gmail.com");
+		allUsers = new HashMap<String, User>();
+		User u1 = new User("1", "Yucheng", "Wang", "ycwmike@gmail.com");
+		User u2 = new User("2", "George", "Lin", "gglin@gmail.com");
 		allUsers.put(u1.getId(), u1);
 		allUsers.put(u2.getId(), u2);
 	}
@@ -25,7 +25,7 @@ public class UserProvider {
 		allUsers.put(u.getId(), u);
 	}
 
-	public User get(long id) {
+	public User get(String id) {
 		return allUsers.get(id);
 	}
 

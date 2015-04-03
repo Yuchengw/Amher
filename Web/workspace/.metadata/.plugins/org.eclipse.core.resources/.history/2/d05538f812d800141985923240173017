@@ -1,0 +1,22 @@
+package com.amher.service.logging;
+
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+
+import com.amher.business.bean.UserList;
+ 
+@Aspect
+public class LoggingTest {
+ 
+	@Before("execution(* com.amher.bean.rest.controller.UserControllerInterface.getUsers(..))")
+	public Object logBefore(ProceedingJoinPoint joinPoint) {
+ 
+		System.out.println("logBefore() is running!");
+		System.out.println("***AspectJ*** DoBefore() is running!! intercepted : " + joinPoint.getSignature().getName());
+		Object object = joinPoint.proceed(); 
+		System.out.println("******");
+		return object;
+	}
+ 
+}

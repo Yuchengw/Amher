@@ -1,0 +1,9 @@
+package com.amher.bean.rest.controller;
+
+public class UserRestURIConstants {
+	 public static final String DUMMY_USER = "/rest/emp/dummy";
+	 public static final String GET_USER = "/rest/emp/{id}";
+	 public static final String GET_ALL_USER = "/rest/emps";
+	 public static final String CREATE_USER = "/rest/emp/create";
+	 public static final String DELETE_USER = "/rest/emp/delete/{id}";
+}

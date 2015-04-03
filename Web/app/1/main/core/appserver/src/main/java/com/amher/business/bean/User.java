@@ -1,45 +1,122 @@
 package com.amher.business.bean;
 
-import java.io.Serializable;
-import java.util.Date;
- 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.ser.std.DateSerializer;
-
-public class User implements Serializable {
+/**
+ * @author yucheng
+ * @version 1
+ * */
+public class User extends BeanObject {
 	
     private static final long serialVersionUID = -7788619177798333712L;
-	
-	private long id;
-	private String name;
+    
+    private String firstName;
+	private String lastName;
+	private String phone;
+	private double creditInfo; 
+	private double activeScore; 
+								
+	private String password;
+	private String alias;
+	private String role;
+	private String id;
+	private boolean isEmailAuthorized;
 	private String email;
-	private Date createdDate;
-	private Date lastModifiedDate;
 	
 	public User() {}
 	
-	public User(long id, String name, String email) {
-		this.id = id;
-		this.name = name;
-		this.email = email;
+	public User(String id, String firstname, String lastname, String email) {
+		// Be careful of lower and upper case 
+		super.setId(id);
+		setFirstName(firstname);
+		setLastName(lastname);
+		setEmail(email);
 	}
 	
-	public long getId() {
+	// Getter and Setter
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+	
+	public String getId() {
 		return id;
 	}
 	
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
+		super.setId(id);
 	}
 	
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
-	
-	public void setName(String name) {
-		this.name = name;
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-	
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public double getCreditInfo() {
+		return creditInfo;
+	}
+
+	public void setCreditInfo(double creditInfo) {
+		this.creditInfo = creditInfo;
+	}
+
+	public double getActiveScore() {
+		return activeScore;
+	}
+
+	public void setActiveScore(double activeScore) {
+		this.activeScore = activeScore;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getAlias() {
+		return alias;
+	}
+
+	public void setAlias(String alias) {
+		this.alias = alias;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public boolean isEmailAuthorized() {
+		return isEmailAuthorized;
+	}
+
+	public void setEmailAuthorized(boolean isEmailAuthorized) {
+		this.isEmailAuthorized = isEmailAuthorized;
+	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -47,22 +124,4 @@ public class User implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	@JsonSerialize(using=DateSerializer.class)
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-	
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-	
-    @JsonSerialize(using=DateSerializer.class)
-    public Date getLastModifiedDate() {
-    	return lastModifiedDate;
-    }
-	
-    public void setLastModifiedDate(Date modifiedDate) {
-    	this.lastModifiedDate = modifiedDate;
-    }
 }

@@ -1,0 +1,125 @@
+package com.amher.business.bean;
+
+import java.util.Date;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.DateSerializer;
+
+/**
+ * @author yucheng
+ * @version 1
+ * */
+public class Order implements Serializable {
+	
+	private String Id;
+	private String thirdPartyInfo;
+	private User  buyer;
+	private User  solder;
+	private boolean isSuccess;
+	private Date TransactionDateTime;
+	private Post parentPost;
+	private double actualCost; 
+	private int quantity; 
+	private double score;	
+	
+	
+	
+	public Order(String id) {
+		setId(id);
+	}
+
+	public Order(User buyer, User solder)  {
+		setBuyer(buyer);
+		setSolder(solder);
+	}
+
+	public Order(User buyer, User solder, String id) {
+		setBuyer(buyer);
+		setSolder(solder);
+		setId(id);
+	}
+
+	// Getter and Setter
+	public String getId() {
+		return Id;
+	}
+ 	
+	public void setId(String id) {
+		this.Id = id
+	}
+	
+	public User getBuyer() {
+		return buyer;
+	}
+
+	public void setBuyer(User buyer) {
+		this.buyer = buyer;
+	}
+
+	public User getSolder() {
+		return solder;
+	}
+
+	public void setSolder(User solder) {
+		this.solder = solder;
+	}
+
+	public boolean isSuccess() {
+		return isSuccess;
+	}
+
+	public void setSuccess(boolean isSuccess) {
+		this.isSuccess = isSuccess;
+	}
+
+	public Date getTransactionDateTime() {
+		return TransactionDateTime;
+	}
+
+	public void setTransactionDateTime(Date transactionDateTime) {
+		TransactionDateTime = transactionDateTime;
+	}
+
+	public Post getParentPost() {
+		return parentPost;
+	}
+
+	public void setParentPost(Post parentPost) {
+		this.parentPost = parentPost;
+	}
+
+	public String getThirdPartyInfo() {
+		return thirdPartyInfo;
+	}
+
+	public void setThirdPartyInfo(String thirdPartyInfo) {
+		this.thirdPartyInfo = thirdPartyInfo;
+	}
+
+	public double getActualCost() {
+		return actualCost;
+	}
+
+	public void setActualCost(double actualCost) {
+		this.actualCost = actualCost;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public double getScore() {
+		return score;
+	}
+
+	public void setScore(double score) {
+		this.score = score;
+	}
+}

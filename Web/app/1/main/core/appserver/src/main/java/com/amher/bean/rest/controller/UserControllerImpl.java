@@ -40,7 +40,7 @@ public class UserControllerImpl implements UserController {
 	
 	@RequestMapping(method=RequestMethod.GET, value=UserRestURIConstants.GET_USER)
 	public @ResponseBody User getUser(@PathVariable String id) {
-		User e = userProvider.get(Long.parseLong(id));
+		User e = userProvider.get(id);
 		return e;
 	}
 	

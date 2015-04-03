@@ -1,0 +1,13 @@
+package com.amher.bean.rest.controller;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.amher.business.bean.User;
+import com.amher.lib.objectProvider.UserProvider;
+
+public interface UserControllerInterface {
+	
+	public @ResponseBody User getUser(@PathVariable String id);
+	
+}

@@ -1,0 +1,9 @@
+package com.amher.business.bean;
+
+public class BeanObject {
+	
+	private String id;
+	private DateTime createdDate;
+	private DateTime lastModifiedDate;
+
+}

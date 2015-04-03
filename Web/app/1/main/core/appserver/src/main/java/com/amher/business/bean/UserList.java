@@ -1,6 +1,5 @@
 package com.amher.business.bean;
 
-import java.io.Serializable;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -10,7 +9,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  * 
  * */
 
-public class UserList implements Serializable {
+public class UserList extends BeanObject {
 	
 	private static final long serialVersionUID = -1370183045720704453L;
 
@@ -40,5 +39,4 @@ public class UserList implements Serializable {
 	public void setUsers(List<User> users) {
 		this.users = users;
 	}
-	
 }
